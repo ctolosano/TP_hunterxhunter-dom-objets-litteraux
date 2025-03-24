@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kavivanar&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+nav {
+	display: grid;
+	grid-template-columns: 30% 40% 30%;
+	align-items: center;
+	justify-items: center;
+}
+
+img {
+	max-width: 100%;
+}
+
+.oui {
+	width: 100%;
+}
+
+.non {
+	border: 20px black solid;
+	border-radius: 10px;
+	width: 43vh;
+	margin: 10px;
+}
+
+body {
+	font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.ouip {
+	background: radial-gradient(
+		50% 138.22% at 50% 50%,
+		#000000 0%,
+		#0084a8 20%,
+		#0015ff 40%,
+		#000000 60%,
+		#0084a8 80%,
+		#0015ff 100%
+	);
+	padding: 10px;
+}
+.d {
+	border: 5px #000000 solid;
+	background-color: #fff;
+}
+
+.o {
+	border: 10px dashed #000000;
+	font-family: Kavivanar;
+	padding: 20px;
+}
+
+.ouip {
+    width: 100%;
+	height: 100%;
+}
