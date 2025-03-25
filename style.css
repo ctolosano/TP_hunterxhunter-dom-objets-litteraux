@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kavivanar&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-body {
+main#main {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 nav {
@@ -55,6 +55,15 @@ body {
 }
 
 .ouip {
-    width: 100%;
+	width: 100%;
 	height: 100%;
+}
+
+.p {
+	display: flex;
+	gap: 10px;
+}
+
+.inputext {
+	width: 100%;
 }

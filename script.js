@@ -1096,6 +1096,13 @@ const cards = [
 	},
 ];
 
+const ssonly = document.getElementById("ssonly");
+const sormore = document.getElementById("sormore");
+const all = document.getElementById("all");
+const inputext = document.getElementById("inputext");
+
+let mainELement = document.getElementById("main");
+
 function CreateCard(title, number, description, image, rank) {
 	const divNon = document.createElement("div");
 	divNon.classList.add("non");
@@ -1157,7 +1164,121 @@ for (let i = 0; i < cards.length; i++) {
 		elemCard.rank
 	);
 
-	document.body.appendChild(Card);
+	mainELement.appendChild(Card);
 }
 
+ssonly.addEventListener("click", () => {
+	const FilterSS = [];
 
+	for (let i = 0; i < cards.length; i++) {
+		const cardsfilter = cards[i];
+		if (cards[i].rank.startsWith("SS")) {
+			console.log(cards[i]);
+			FilterSS.push(cardsfilter);
+		}
+	}
+
+	mainELement.remove();
+	mainELement = document.createElement("main");
+	mainELement.id = "main";
+	document.body.appendChild(mainELement);
+
+	for (let i = 0; i < FilterSS.length; i++) {
+		const elemCard = FilterSS[i];
+
+		const Card = CreateCard(
+			elemCard.name,
+			elemCard.number,
+			elemCard.description,
+			elemCard.image,
+			elemCard.rank
+		);
+
+		mainELement.appendChild(Card);
+	}
+});
+
+sormore.addEventListener("click", () => {
+	const FilterSorMore = [];
+
+	for (let i = 0; i < cards.length; i++) {
+		const cardsSorMore = cards[i];
+
+		if (cardsSorMore.rank.startsWith("S")) {
+			FilterSorMore.push(cardsSorMore);
+		}
+	}
+
+	mainELement.remove();
+	mainELement = document.createElement("main");
+	mainELement.id = "main";
+	document.body.appendChild(mainELement);
+
+	for (let i = 0; i < FilterSorMore.length; i++) {
+		const elemCard = FilterSorMore[i];
+
+		const Card = CreateCard(
+			elemCard.name,
+			elemCard.number,
+			elemCard.description,
+			elemCard.image,
+			elemCard.rank
+		);
+
+		mainELement.appendChild(Card);
+	}
+});
+
+all.addEventListener("click", () => {
+	mainELement.remove();
+	mainELement = document.createElement("main");
+	mainELement.id = "main";
+	document.body.appendChild(mainELement);
+
+	for (let i = 0; i < cards.length; i++) {
+		const elemCard = cards[i];
+
+		const Card = CreateCard(
+			elemCard.name,
+			elemCard.number,
+			elemCard.description,
+			elemCard.image,
+			elemCard.rank
+		);
+
+		mainELement.appendChild(Card);
+	}
+});
+
+
+inputext.addEventListener("input", () => {
+	const inputexttable = [];
+
+	for (let i = 0; i < cards.length; i++) {
+		const cardinput = cards[i];
+
+		if (cardinput.name.toLowerCase().includes(inputext.value.toLowerCase())) {
+			console.log(inputext.value)
+			inputexttable.push(cardinput);
+		}
+	}
+
+	mainELement.remove();	
+	mainELement = document.createElement("main");
+	mainELement.id = "main";
+	document.body.appendChild(mainELement);
+
+	for (let i = 0; i < inputexttable.length; i++) {
+		const elemCard = inputexttable[i];
+
+		const Card = CreateCard(
+			elemCard.name,
+			elemCard.number,
+			elemCard.description,
+			elemCard.image,
+			elemCard.rank
+		);
+
+		mainELement.appendChild(Card);
+	}
+});
